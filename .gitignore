@@ -1,0 +1,5 @@
+build/
+dist-newstyle/
+build/
+*.tar.gz
+.Rcheck/

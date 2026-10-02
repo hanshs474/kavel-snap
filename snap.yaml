@@ -1,0 +1,32 @@
+name: kavel
+version: '0.1.0'
+summary: Generate AI images from the terminal, no API key needed
+description: |
+  Type a prompt, get back a link to a finished image. kavel calls the free
+  anonymous tier of Kavel AI (https://www.kavel.ai), so it works on a machine
+  with nothing configured: no account, no key, no config file.
+
+    kavel "matte black ceramic mug on pale oak, soft window light"
+    kavel -ratio 16:9 "an isometric coffee shop, pastel palette"
+
+  Free output is 1K and watermarked, with a small daily allowance per machine.
+  Set KAVEL_API_KEY to a key from https://www.kavel.ai/settings/apikeys to run
+  on your account, pick any image model with -model, and edit an existing photo
+  with -edit URL.
+architectures: [ARCH]
+base: core22
+confinement: strict
+grade: stable
+license: MIT
+title: Kavel AI Image Generator
+links:
+  website:
+    - https://www.kavel.ai
+  source-code:
+    - https://github.com/hanshs474/kavel-go
+  issues:
+    - https://github.com/hanshs474/kavel-go/issues
+apps:
+  kavel:
+    command: bin/kavel
+    plugs: [network]
